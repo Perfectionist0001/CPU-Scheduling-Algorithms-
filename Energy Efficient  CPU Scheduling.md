@@ -5,7 +5,7 @@ Energy Efficient CPU Scheduling Algorithms
 
          NIKHIL SINGH                   AASHISH BHASKAR                   NAVJOT KAUR
 
-  tech.nikhilsingh@gmail.com        imaashishbhaskar@gmail.com
+  tech.nikhilsingh@gmail.com          imaashishbhaskar@gmail.com
 
  Lovely Professional University, Jalandhar-Punjab, India
 
@@ -56,6 +56,7 @@ Index:
 
 
 Abstract
+
 This report will be a detailed study of the different CPU scheduling algorithms. The performance, weaknesses, and possible improvements for the different algorithms can be found. On traditional algorithms, such as First-Come, First-Served (FCFS), Shortest Job First (SJF), Priority Scheduling, and Round Robin, it is possible to make further comparisons on how those algorithms are different from one another in different computing environments. Further analysis has been conducted based on metrics including throughput, waiting time, response time, and CPU utilization for each algorithm. Other new topics covered in CPU scheduling include low-power algorithms that focus on reduction in energy consumption in current systems and real-time scheduling applied in the use of time-critical tasks in embedded and safety-critical systems. The report further does an analysis of the application of machine learning techniques in optimizing CPU scheduling with predictive models dynamically adapted to scheduling decisions in search of higher performance in variable workloads. Challenges of the Approach This section discusses some of the challenges associated with the approach: the trade-off between scheduling fairness and performance, as well as between real-time constraints and power efficiency. Finally, some improvements are proposed to overcome such challenges; hence, the discussion includes several hybrid scheduling approaches and adaptive algorithms.
 
 
