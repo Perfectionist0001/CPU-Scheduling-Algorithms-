@@ -3,7 +3,7 @@
 
 Energy Efficient CPU Scheduling Algorithms
 
-         NIKHIL SINGH                   ASHISH BHASKAR                   NAVJOT KAUR
+         NIKHIL SINGH                   AASHISH BHASKAR                   NAVJOT KAUR
 
   tech.nikhilsingh@gmail.com        imaashishbhaskar@gmail.com
 
@@ -64,4 +64,16 @@ This report will be a detailed study of the different CPU scheduling algorithms.
 It plays a very significant role about how the access to CPU is allocated to the process in the operating system and which in turn is very important to protect the performance and efficiency of the system. Therefore, this is an inevitable need that may arise since computers and devices deal with bigger numbers of tasks, and so the OS has to determine a sequence as well as period for which each process has to access the CPU. This naturally leads to defining key performance metrics: Throughput, response time, CPU utilization, and fairness. Several classic scheduling algorithms have been developed to fulfill this need, including First-Come, First-Served, Shortest Job First, Round Robin, and Priority Scheduling. 
 In addition to those traditional techniques of scheduling, significant advancement has taken place in scheduling innovations that fulfill the need for modern computing environments. For instance, real-time systems used in medical devices or industrial controls are subject to specific algorithms for scheduling, like RMS and EDF, that ensure fundamental timing constraints. Energy efficiency becomes yet another very relevant consideration in the context of CPU scheduling, especially in mobile and embedded systems where battery life is considered significant. Power is scaled down without hurting performance too badly by techniques like Dynamic Voltage and Frequency Scaling (DVFS). It is widely applied to a domain that machine learning operates in, which is CPU scheduling. Systems continuously learn dynamic adaptation to changing workloads and adapt scheduling based on patterns and predictions. In a sense, innovation has been driven by the complexity and variability of modern computing environments-a "perfect storm" that ensures CPU scheduling remains well-tuned to forward needs.[1],[2],[3]
 
+
+                            Fig 1 .The figure depicts a classification of CPU scheduling algorithms into Preemptive 
+                            (e.g., Round Robin, SRTF, Preemptive Priority) and Non-Preemptive (e.g., FCFS, SJF, 
+                            Non-Preemptive Priority) categories.[5]
+
+
+
+                            Fig 2 .The figure illustrates a job scheduling flow where jobs first enter the Ready Queue. 
+                            From there, the Dispatcher either directs jobs to the CPU for execution or moves them to the 
+                            Waiting Queue if resources are unavailable. This process shows the decision paths for jobs in
+                            a CPU scheduling system.[5]
+                            
 
