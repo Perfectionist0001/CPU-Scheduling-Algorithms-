@@ -157,3 +157,4 @@ Rate-Monotonic Scheduling is a fixed-priority algorithm where tasks with shorter
 The EDF algorithm is a dynamic priority scheduling algorithm where the processes are given priorities according to their deadlines, so the process having the earliest deadline will be given the highest priority. EDF is more flexible than RMS but comes with higher complexity and overhead.
 In EDF, the priority of a process is based on how close it is to its deadline. Hence, all those processes at or just above the level of missing their deadline are executed first, making EDF optimal about the use of resources. [3],[4]
 
+5.
