@@ -78,3 +78,64 @@ In addition to those traditional techniques of scheduling, significant advanceme
                             a CPU scheduling system.[5]
                             
 
+2. Comparison of CPU Scheduling Algorithms
+   
+2.1 First-Come, First-Served (FCFS)
+
+The one of the simplest CPU scheduling algorithms is FCFS. This algorithm executes the processes in the order of their arrival. Although it is easy to implement, due to the convoy effect where shorter tasks have to wait for longer ones, the average waiting time of those requiring less cycles suffer.
+For example, in the case of a three-process system, if time for CPU for P1=10ms, P2=5ms, and P3=1ms, and they would arrive in the order P1, P2, and P3, then P3 would wait for the completion of both P1 and P2, which would increase its waiting time. [2],[3],[5]
+
+2.2 Shortest Job First (SJF)
+
+SJF is that kind of scheduling algorithm which is based upon the burst time of the jobs, and it executes the shortest jobs first. The average waiting time is very much less than that of FCFS as this kind of system serves the shortest jobs first. Still, the trouble faced in it is to predict the job lengths correctly. SJF can be either non-preemptive or preemptive, and also known as Shortest Remaining Time First.
+For instance, when a short job comes when a long job is being processed, SJF can make proper use of the processor to lessen the waiting time by executing the shorter job first. This is effective in systems with predictable job execution times but may introduce errors in the system when it comes to unknown or dynamically changing job length. [2],[3],[5]
+
+Advantages:
+
+• Reduces average waiting time compared to FCFS
+• Suitable for minimizing waiting time in most of the cases
+
+Disadvantages:
+
+• Estimating Job Lengths: It cannot predict lengths of future processes which is not possible.
+• Starvation: It may become so that long processes never gets executed.
+
+Example
+
+• Let process with burst times : P1 = 10ms, P2 = 5ms, P3 = 1ms.
+o P3 runs first then P2 then P1 .
+o Waiting Time: P1 = 6ms, P2 = 1ms, P3 = 0ms.
+
+2.3 Round Robin (RR)
+
+Round Robin. This is a fair scheduling algorithm in which every process gets a predefined time quantum. The CPU switches among processes cyclically. Though RR ensures no process is starved, it could have very high context switching overheads if the time quantum is very low.
+For example, consider three processes in a time-sharing system. If the time quantum is set too low (1 ms, for example), the CPU spends a majority of its time switching between processes rather than executing, which is highly inefficient. On the other hand, if the time quantum is large, it approaches the FCFS behavior. [2],[4],[5]
+
+Advantages:
+
+Fairness: Every process gets equal chance and thus no starvation.
+Preemptive: Processes can be preempted and another can take over.
+
+Disadvantages:
+
+High Context Switching: If time quantum is low then majority of the clock would go in switching and very little would go in execution of the process
+Approaching FCFS: If time quantum is high then it will almost behave like FCFS.
+
+Example:
+
+Suppose three processes P1, P2, and P3 with time quantum of 1ms.
+Everytime one of the three will get 1ms.
+
+Efficiency: If the quantum is too small, the CPU spends a lot of its time switching.
+
+2.4 Priority Scheduling
+
+In Priority Scheduling, processes get different priorities. High-priority processes are executed first. This algorithm can also lead to starvation of lower-priority processes because of which aging techniques become important.
+For example, consider the case where high-priority processes are still arriving; the low-priority ones may never get executed. Aging solves that problem with a very simple strategy to increment the priority of such waiting processes so that there is fairness among them. [2],[4]
+
+2.5 Performance Comparison
+
+For various algorithms, performance depends on various parameters such as the system workload, the length of jobs, and the mix of CPU-bound and I/O-bound processes. On average, waiting time is concerned, SJF is better than other algorithms though requires that the length of jobs be predicted precisely. RR ensures fairness but may incur greater overhead due to the context switch. Priority scheduling is flexible but dangerous and prone to starvation in the majority of systems that contain high-priority jobs.
+
+For example, in a short jobs environment, SJF would result in minimum waiting time; whereas in unpredictable job length environments, RR may suit due to its fairness. [2],[3],[5]
+
