@@ -139,3 +139,21 @@ For various algorithms, performance depends on various parameters such as the sy
 
 For example, in a short jobs environment, SJF would result in minimum waiting time; whereas in unpredictable job length environments, RR may suit due to its fairness. [2],[3],[5]
 
+3. Improvement of Round Robin Scheduling
+   
+More appropriate for Round Robin would be dynamically changing the time quantum based on process behavior. In adaptive Round Robin, fair effort should be balanced with efficiency-that is, reduce the overhead of context switching while at the same time enhancing the performance of the system as a whole.
+One improvement would be to keep track of the average burst time of processes and set the quantum accordingly. If most the processes have short burst times, a smaller quantum reduces context-switches without compromising fairness. [2],[4]
+               
+4. Real-Time CPU Scheduling
+   
+Real-time systems require scheduling algorithms that ensure processes meet strict timing requirements. In these systems, missing a deadline can have serious consequences, especially in applications like air traffic control or medical devices.
+
+4.1 Rate-Monotonic Scheduling (RMS)
+
+Rate-Monotonic Scheduling is a fixed-priority algorithm where tasks with shorter periods are assigned higher priority. RMS is used in systems with periodic tasks that have predictable execution times. However, RMS is not optimal for all real-time systems, especially if tasks have irregular periods.[3],[4]
+
+4.2 Earliest Deadline First (EDF)
+
+The EDF algorithm is a dynamic priority scheduling algorithm where the processes are given priorities according to their deadlines, so the process having the earliest deadline will be given the highest priority. EDF is more flexible than RMS but comes with higher complexity and overhead.
+In EDF, the priority of a process is based on how close it is to its deadline. Hence, all those processes at or just above the level of missing their deadline are executed first, making EDF optimal about the use of resources. [3],[4]
+
