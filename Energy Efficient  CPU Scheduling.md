@@ -157,4 +157,83 @@ Rate-Monotonic Scheduling is a fixed-priority algorithm where tasks with shorter
 The EDF algorithm is a dynamic priority scheduling algorithm where the processes are given priorities according to their deadlines, so the process having the earliest deadline will be given the highest priority. EDF is more flexible than RMS but comes with higher complexity and overhead.
 In EDF, the priority of a process is based on how close it is to its deadline. Hence, all those processes at or just above the level of missing their deadline are executed first, making EDF optimal about the use of resources. [3],[4]
 
-5.
+            5. Energy-Efficient Scheduling
+            
+Energy-efficient CPU scheduling has emerged as a critical component in the design of current mobile and embedded systems due to its capability to balance performance with power consumption. This problem is particularly significant for various battery-powered gadgets, such as smartphones and tablets and IoT devices, wherein their life extensions are of much concern. Several techniques for optimizing power use have been developed, such as DVFS and algorithms for sleep and wake times. So, let's dive a little deeper into these concepts:
+
+Dynamic Voltage and Frequency Scaling(DVFS)
+
+DVFS is the policy of dynamically changing the voltage and frequency at which the CPU runs, based on workload. The technique works:
+Frequency and Voltage Scaling: The frequency scales down, hence the power the CPU is consuming. Scaling the voltage along with the frequency reduces the power consumption quadratically however that slows the processor, and this may result in performance hit if the CPU needs to do more work. The basic idea behind DVFS is the balance between performance and power consumption.
+
+•	High workload: In the high workload case, when the gadget is performing an intensive task like online gaming or video processing, the CPU clock is running with a higher frequency and voltage to offer the required performance
+
+•	Low workload: When the workload is low and less stressful, for instance, when the device is idle or running background applications, its frequency and voltage are scaled down; this saves a lot of power without impacting the performance much. 
+
+•	Power Consumption: Power consumed by the CPU is proportional to the square of the supply voltage and directly proportional to the operating frequency. Therefore, lowering either voltage or frequency makes a huge difference in power saving. [1],[3]
+
+Sleep/Wake Algorithms (Idle Time Management)
+
+The other aspect of energy-efficient scheduling includes the handling of idle time. As long as there is no execution in the CPU or it sits idle, waiting for any execution, it is not essential to have it in full power state. Modern CPUs have several states-they could be active, idle or deep sleep. Under such low power states, it can quickly wake up at any instant and resume its operations to conserve energy:
+
+•	Sleep States: If the CPU needs to wait for periods of inactivity, it can go to successively deeper sleep states, consuming less power but requiring more and more time and cycles to wake up again. The scheduler controls the basis of how to change state under predicted idle times.
+
+•	Idle Power Management: Modern cellular devices spend a large amount of their time idle, and good management of this can save a lot of energy. The OS uses heuristics to predict when the device is going to be idle and so selectively put the CPU in low power states during these times.
+
+	Light Sleep: At this point, the CPU can rapidly wake up in case other tasks are to be performed; it continues to draw a small amount of power for maintaining system state.
+
+	Deep Sleep: This state partially disables most of the components powering the CPU and minimizes power consumption; however, waking up from deep sleep takes longer and more power as compared to waking up from any other lighter sleep modes. [1],[3]
+
+Hybrid of DVFS with Sleep/Wake
+
+Now-a-days, the latest CPUs from many modern manufacturers contain both the DVFS and sleep/wake algorithms in order to optimize the performance. It dynamically adjusts the frequency and the voltage while observing the idle times. In case it predicts a long idle period, it pushes the CPU into a low power state. Thus, theoretically, it may reduce its energy consumption not only when idle but also during active periods. [1],[3]
+
+Use in Mobile Devices
+
+Due to such variability in workloads within mobile devices, depending upon the nature of activities of users (example: scrolling within a web page versus playing video games), DVFS and sleep/wake methodologies are very important in mobile devices:
+
+•	Background Tasks: Most applications run in the background in mobile, but usually do not require the full power of the CPU. By reducing the frequency and placing the CPU in lower power states, the mobile can save its battery.
+
+•	Interactive Workloads: On interactive workloads such as opening apps and general typing, the CPU quickly ]scales up for responsiveness. Once the user is idle, it can slow down or go to a low-power idle state to save energy. [1],[3]
+
+    6. Machine Learning in CPU Scheduling
+    
+Application of machine learning (ML) is applied to CPU scheduling such that the CPU identifies its dynamic workload and adjusts for optimized resource allocation and efficiency in performing work. Some of the key techniques include the following:
+
+1. Predictive Models for Estimation of Job Length
+
+2. It predicts the job length by using data related to the past; these could be regression or neural networks. Therefore, a good model will allow schedulers to rank their tasks better so that waiting time can be reduced and in turn improve throughput of the system. These can be dynamic adaptation models that adapt with time as the workload keeps changing. [2],[3]
+
+3. Pattern recognition in the pattern of workloads
+The clustering algorithms, such as k-means or time-series models (e.g., RNNs), identify patterns in workloads. Examples of these patterns may be spikes in CPU demand at specific times of day. Therefore, proactive scheduling adjustments take place as well as peak loads are dealt with effectively. [3],[4]
+
+4. Reinforcement Learning for Optimal Scheduling
+RL allows a scheduling agent to learn from real-time feedback, such that the allocation of tasks is optimized with experience over time. An agent adjusts strategies toward optimal long-term performance while keeping energy efficiency by factors such as job priority and overall system energy consumption. Advanced methods use Deep Reinforcement Learning (DQN) to make complicated environment scheduling decisions possible. [3],[4]
+
+5. Neural Networks for Complex Scheduling Decisions
+Neural networks capture non-linear relationships between workload characteristic and system performance, thus enhancing the decision process for complex scheduling scenarios. Indeed, this may let optimum jobs within many factors, such as system latency, energy consumption, and priority. [3],[4]
+ 
+       7. Conclusion
+
+This report discusses in-depth CPU scheduling algorithms, from traditional ones such as FCFS, SJF, and RR to advanced techniques about energy-efficient and machine learning-based scheduling. It is shown that with the approach in performance comparisons, no algorithm is the best suited for all cases; however, each has relative strengths and weaknesses under different workloads and system requirements. Future work may focus on hybrid scheduling techniques to combine the best of both worlds between the two traditional and modern approaches.
+
+       8. Reference
+   
+1.	Stallings, W. (2015). Operating Systems: Internals and Design Principles (9th ed.). Pearson.
+
+•	A straightforward textbook that covers basic operating system concepts, including CPU scheduling algorithms.
+
+2.	Silberschatz, A., Galvin, P. B., & Gagne, G. (2018). Operating System Concepts (10th ed.). Wiley.
+
+•	A widely used book that explains key scheduling algorithms with examples and comparisons.
+
+3.	Gallo, C., & Barletta, M. (2020). "An Introduction to CPU Scheduling." Journal of Computer Science & Technology
+
+•	A beginner-friendly article that introduces CPU scheduling and compares common algorithms.
+
+4.	Sinha, P., & Choudhury, A. (2018). "Understanding CPU Scheduling Algorithms." International Journal of Computer Applications.
+
+•	A simple overview of various CPU scheduling algorithms and their characteristics.
+
+5.	https://www.geeksforgeeks.org/cpu-scheduling-in-operating-systems
+
