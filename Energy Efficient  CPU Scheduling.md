@@ -37,7 +37,9 @@ Index:
 5.	Energy-Efficient Scheduling
 
 5.1 Dynamic Voltage and Frequency Scaling (DVFS)
+
 5.2 Sleep/Wake Algorithms (Idle Time Management)
+
 5.3 Hybrid Approaches
 5.4 Use in Mobile Devices
 5.5 Use in Embedded System
