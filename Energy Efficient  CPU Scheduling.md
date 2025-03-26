@@ -1,15 +1,14 @@
 
-                                                         TERM PAPER:
+                                                         RESEARCH PAPER:
 
 Energy Efficient CPU Scheduling Algorithms
 
-         NIKHIL SINGH                   AASHISH BHASKAR                   NAVJOT KAUR
+         NIKHIL SINGH                   AASHISH BHASKAR                   ANKIT KUMAR
 
-  tech.nikhilsingh@gmail.com          imaashishbhaskar@gmail.com
+  tech.nikhilsingh@gmail.com        imaashishbhaskar@gmail.com       ankitdark719@gmail.com
 
- Lovely Professional University, Jalandhar-Punjab, India
-
-                  www.lpu.in
+                     Lovely Professional University, Jalandhar-Punjab, India
+                                          www.lpu.in
 
 Index:
 
@@ -19,46 +18,34 @@ Index:
 
 2.	Comparison of CPU Scheduling Algorithms
 
-2.1 First-Come, First-Served (FCFS)
-
-2.2 Shortest Job First (SJF)
-
-2.3 Round Robin (RR)
-
-2.4 Priority Scheduling
-
-2.5 Performance Comparison
+  2.1 First-Come, First-Served (FCFS)
+  2.2 Shortest Job First (SJF)
+  2.3 Round Robin (RR)
+  2.4 Priority Scheduling
+  2.5 Performance Comparison
 
 3.	Improvement of Round Robin Scheduling
 
-3.1 Dynamic Time Quantum
+  3.1 Dynamic Time Quantum
 
 4.	Real-Time CPU Scheduling
 
-4.1 Rate-Monotonic Scheduling (RMS)
-4.2 Earliest Deadline First (EDF)
+  4.1 Rate-Monotonic Scheduling (RMS)
+  4.2 Earliest Deadline First (EDF)
 
 5.	Energy-Efficient Scheduling
 
-5.1 Dynamic Voltage and Frequency Scaling (DVFS)
-
-5.2 Sleep/Wake Algorithms (Idle Time Management)
-
-5.3 Hybrid Approaches
-
-5.4 Use in Mobile Devices
-
-5.5 Use in Embedded System
+  5.1 Dynamic Voltage and Frequency Scaling (DVFS)
+  5.2 Sleep/Wake Algorithms (Idle Time Management)
+  5.3 Hybrid Approaches
+  5.4 Use in Mobile Devices and Embedded System
 
 6.	Machine Learning in CPU Scheduling
 
-6.1 Predictive Models for Estimation of Job Length
-
-6.2 Pattern Recognition in Workloads
-
-6.3 Reinforcement Learning for Optimal Scheduling
-
-6.4 Neural Networks for Complex Scheduling Decisions
+  6.1 Predictive Models for Estimation of Job Length
+  6.2 Pattern Recognition in Workloads
+  6.3 Reinforcement Learning for Optimal Scheduling
+  6.4 Neural Networks for Complex Scheduling Decisions
 
 7.	Conclusion
 
