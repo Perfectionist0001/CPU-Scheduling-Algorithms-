@@ -207,6 +207,15 @@ Due to such variability in workloads within mobile devices, depending upon the n
 
 •	Interactive Workloads: On interactive workloads such as opening apps and general typing, the CPU quickly ]scales up for responsiveness. Once the user is idle, it can slow down or go to a low-power idle state to save energy. [1],[3]
 
+Use in Embedded Systems
+
+Embedded systems require specialized CPU scheduling techniques to manage real-time constraints, power efficiency, and limited resources. These systems are found in applications like automotive control, medical devices, industrial automation, and IoT devices
+
+•	Background Tasks: Most  embedded systems run background tasks that do not require constant CPU attention. Power-efficient scheduling algorithms, such as Dynamic Voltage and Frequency Scaling (DVFS) and Sleep/Wake techniques, allow the CPU to enter low-power states during idle periods to conserve energy.
+
+•	Real-Time Workloads: In real-time embedded systems, tasks must be completed within strict time limits. Algorithms like Rate-Monotonic Scheduling (RMS) and Earliest Deadline First (EDF) dynamically adjust task execution to meet real-time constraints. This is crucial for applications such as pacemakers, industrial robots, and automotive safety systems. [1],[3]
+
+
     6. Machine Learning in CPU Scheduling
     
 Application of machine learning (ML) is applied to CPU scheduling such that the CPU identifies its dynamic workload and adjusts for optimized resource allocation and efficiency in performing work. Some of the key techniques include the following:
