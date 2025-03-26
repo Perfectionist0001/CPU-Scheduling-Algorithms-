@@ -41,7 +41,9 @@ Index:
 5.2 Sleep/Wake Algorithms (Idle Time Management)
 
 5.3 Hybrid Approaches
+
 5.4 Use in Mobile Devices
+
 5.5 Use in Embedded System
 
 6.	Machine Learning in CPU Scheduling
