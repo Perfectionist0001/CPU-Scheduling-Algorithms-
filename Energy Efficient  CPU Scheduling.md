@@ -1,5 +1,5 @@
 
-                                   TERM PAPER:
+                                                         TERM PAPER:
 
 Energy Efficient CPU Scheduling Algorithms
 
