@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- CPU -->
+  <rect x="300" y="250" width="200" height="200" rx="10" ry="10" fill="#4caf50" stroke="#333" stroke-width="3"/>
+  <text x="400" y="350" font-family="Arial" font-size="24" text-anchor="middle" fill="white">CPU</text>
+  
+  <!-- Processes -->
+  <rect x="50" y="150" width="100" height="50" rx="5" ry="5" fill="#2196f3" stroke="#333" stroke-width="2"/>
+  <text x="100" y="180" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Process 1</text>
+  
+  <rect x="50" y="250" width="100" height="50" rx="5" ry="5" fill="#f44336" stroke="#333" stroke-width="2"/>
+  <text x="100" y="280" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Process 2</text>
+  
+  <rect x="50" y="350" width="100" height="50" rx="5" ry="5" fill="#ff9800" stroke="#333" stroke-width="2"/>
+  <text x="100" y="380" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Process 3</text>
+  
+  <rect x="50" y="450" width="100" height="50" rx="5" ry="5" fill="#9c27b0" stroke="#333" stroke-width="2"/>
+  <text x="100" y="480" font-family="Arial" font-size="16" text-anchor="middle" fill="white">Process 4</text>
+  
+  <!-- Ready Queue -->
+  <rect x="200" y="300" width="50" height="100" rx="5" ry="5" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <text x="225" y="290" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Ready Queue</text>
+  
+  <!-- Arrows from processes to ready queue -->
+  <path d="M 150 175 L 200 325" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 150 275 L 200 335" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 150 375 L 200 345" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 150 475 L 200 355" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow from ready queue to CPU -->
+  <path d="M 250 350 L 300 350" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Completed processes -->
+  <rect x="550" y="300" width="50" height="100" rx="5" ry="5" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <text x="575" y="290" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Completed</text>
+  
+  <!-- Arrow from CPU to completed -->
+  <path d="M 500 350 L 550 350" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Scheduler -->
+  <rect x="300" y="100" width="200" height="80" rx="10" ry="10" fill="#607d8b" stroke="#333" stroke-width="2"/>
+  <text x="400" y="145" font-family="Arial" font-size="18" text-anchor="middle" fill="white">CPU Scheduler</text>
+  
+  <!-- Arrow from scheduler to CPU -->
+  <path d="M 400 180 L 400 250" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Energy meter -->
+  <rect x="550" y="150" width="40" height="100" rx="5" ry="5" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  <rect x="555" y="155" width="30" height="90" fill="#e0e0e0"/>
+  <rect x="555" y="200" width="30" height="45" fill="#4caf50"/>
+  <text x="570" y="130" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">Energy</text>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
