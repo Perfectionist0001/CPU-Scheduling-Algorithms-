@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy-Efficient CPU Scheduling</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="logo">
+            <i class="fas fa-microchip"></i>
+            <h1>CPU Scheduler</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#algorithms">Algorithms</a></li>
+                <li><a href="#simulation">Simulation</a></li>
+                <li><a href="#results">Results</a></li>
+            </ul>
+        </nav>
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="active-section">
+            <div class="hero">
+                <h2>Energy-Efficient CPU Scheduling</h2>
+                <p>Optimize your system's performance while minimizing energy consumption</p>
+                <a href="#simulation" class="btn primary-btn" id="start-simulation-btn">Start Simulation</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About CPU Scheduling</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>CPU scheduling is the process of determining which process in the ready queue will be allocated to the CPU. It aims to maximize CPU utilization, throughput, and minimize response time, waiting time, and turnaround time.</p>
+                        <p>Energy-efficient scheduling algorithms additionally focus on reducing power consumption without significantly compromising performance.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/cpu-scheduling.svg" alt="CPU Scheduling Illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="algorithms">
+            <div class="container">
+                <h2>Scheduling Algorithms</h2>
+                <div class="algorithm-cards">
+                    <div class="card">
+                        <h3>First Come First Serve (FCFS)</h3>
+                        <p>Processes are executed in the order they arrive in the ready queue.</p>
+                        <div class="algorithm-details">
+                            <h4>Characteristics:</h4>
+                            <ul>
+                                <li>Non-preemptive scheduling algorithm</li>
+                                <li>Simple to implement and understand</li>
+                                <li>Poor average waiting time</li>
+                                <li>Suffers from convoy effect (short processes wait behind long ones)</li>
+                            </ul>
+                            <h4>Energy Efficiency:</h4>
+                            <p>Low energy efficiency as CPU runs at full power regardless of workload characteristics.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Shortest Job First (SJF)</h3>
+                        <p>Processes with the shortest burst time are executed first.</p>
+                        <div class="algorithm-details">
+                            <h4>Characteristics:</h4>
+                            <ul>
+                                <li>Can be preemptive (SRTF) or non-preemptive</li>
+                                <li>Optimal average waiting time when all jobs arrive simultaneously</li>
+                                <li>Requires prediction of burst time</li>
+                                <li>May lead to starvation of longer processes</li>
+                            </ul>
+                            <h4>Energy Efficiency:</h4>
+                            <p>Moderate energy efficiency as shorter jobs complete quickly, but no power state management.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Round Robin (RR)</h3>
+                        <p>Each process is assigned a fixed time slice in a cyclic way.</p>
+                        <div class="algorithm-details">
+                            <h4>Characteristics:</h4>
+                            <ul>
+                                <li>Preemptive scheduling algorithm</li>
+                                <li>Fair allocation of CPU time</li>
+                                <li>Good for time-sharing systems</li>
+                                <li>Performance depends on time quantum selection</li>
+                                <li>Higher context switching overhead</li>
+                            </ul>
+                            <h4>Energy Efficiency:</h4>
+                            <p>Lower energy efficiency due to frequent context switches and constant CPU utilization.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Priority Scheduling</h3>
+                        <p>Processes are scheduled based on priority. Higher priority processes are executed first.</p>
+                        <div class="algorithm-details">
+                            <h4>Characteristics:</h4>
+                            <ul>
+                                <li>Can be preemptive or non-preemptive</li>
+                                <li>Prioritizes important tasks</li>
+                                <li>May lead to starvation of lower priority processes</li>
+                                <li>Often implemented with aging to prevent starvation</li>
+                            </ul>
+                            <h4>Energy Efficiency:</h4>
+                            <p>Moderate energy efficiency, can be improved by assigning energy-aware priorities.</p>
+                        </div>
+                    </div>
+                    <div class="card highlight">
+                        <h3>Energy-Efficient Scheduling</h3>
+                        <p>Optimizes CPU frequency and voltage to reduce energy consumption while maintaining performance.</p>
+                        <div class="algorithm-details">
+                            <h4>Characteristics:</h4>
+                            <ul>
+                                <li>Utilizes Dynamic Voltage and Frequency Scaling (DVFS)</li>
+                                <li>Assigns power states based on process requirements</li>
+                                <li>Balances performance and energy consumption</li>
+                                <li>Considers both CPU and I/O bound processes</li>
+                                <li>Reduces thermal output and extends battery life</li>
+                            </ul>
+                            <h4>Power States:</h4>
+                            <p>Typically uses multiple power states:</p>
+                            <ul>
+                                <li><strong>High:</strong> Maximum performance, highest energy consumption</li>
+                                <li><strong>Medium:</strong> Balanced performance and energy usage</li>
+                                <li><strong>Low:</strong> Reduced performance, significant energy savings</li>
+                                <li><strong>Idle:</strong> Minimal energy consumption during inactive periods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulation">
+            <div class="container">
+                <h2>Simulation</h2>
+                <div class="simulation-container">
+                    <div class="process-input">
+                        <h3>Process Input</h3>
+                        <form id="process-form">
+                            <div class="form-group">
+                                <label for="process-id">Process ID</label>
+                                <input type="text" id="process-id" placeholder="P1">
+                            </div>
+                            <div class="form-group">
+                                <label for="arrival-time">Arrival Time</label>
+                                <input type="number" id="arrival-time" min="0" value="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="burst-time">Burst Time</label>
+                                <input type="number" id="burst-time" min="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <div id="priority-container" style="display: none;">
+                                    <label for="priority">Priority</label>
+                                    <input type="number" id="priority" class="form-control" min="1" value="1">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Add Process</button>
+                        </form>
+                        <div class="process-table-container">
+                            <h3>Process Table</h3>
+                            <table id="process-table">
+                                <thead>
+                                    <tr>
+                                        <th>Process ID</th>
+                                        <th>Arrival Time</th>
+                                        <th>Burst Time</th>
+                                        <th class="priority-header">Priority</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Process rows will be added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="algorithm-selection">
+                        <h3>Select Algorithm</h3>
+                        <div class="algorithm-options">
+                            <label>
+                                <input type="radio" name="algorithm" value="fcfs" checked>
+                                FCFS
+                            </label>
+                            <label>
+                                <input type="radio" name="algorithm" value="sjf">
+                                SJF
+                            </label>
+                            <label>
+                                <input type="radio" name="algorithm" value="rr">
+                                Round Robin
+                            </label>
+                            <label>
+                                <input type="radio" name="algorithm" value="priority">
+                                Priority
+                            </label>
+                            <label>
+                                <input type="radio" name="algorithm" value="energy">
+                                Energy-Efficient
+                            </label>
+                        </div>
+                        <div id="time-quantum-container" style="display: none;">
+                            <label for="time-quantum">Time Quantum</label>
+                            <input type="number" id="time-quantum" min="1" value="2">
+                        </div>
+                        <div class="simulation-buttons">
+                            <button id="run-simulation" class="btn primary-btn">Run Simulation</button>
+                            <button id="run-all-btn" class="btn secondary-btn">Compare All</button>
+                            <button id="random-btn" class="btn secondary-btn">Generate Random</button>
+                            <button id="import-btn" class="btn secondary-btn">Import</button>
+                            <button id="export-btn" class="btn secondary-btn">Export</button>
+                            <button id="clear-btn" class="btn danger-btn">Clear All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results">
+            <div class="container">
+                <h2>Simulation Results</h2>
+                <div class="results-container">
+                    <div class="gantt-chart-container">
+                        <h3>Gantt Chart</h3>
+                        <div id="gantt-chart"></div>
+                    </div>
+                    <div class="metrics-container">
+                        <h3>Performance Metrics</h3>
+                        <div id="metrics-table"></div>
+                    </div>
+                    <div class="energy-chart-container">
+                        <h3>Energy Consumption</h3>
+                        <canvas id="energy-chart"></canvas>
+                    </div>
+                    <div class="comparison-chart-container">
+                        <h3>Algorithm Comparison</h3>
+                        <canvas id="comparison-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Energy-Efficient CPU Scheduling Simulator</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
